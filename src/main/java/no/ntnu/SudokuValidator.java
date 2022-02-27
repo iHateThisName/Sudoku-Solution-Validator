@@ -3,6 +3,10 @@ package no.ntnu;
 
 import java.util.HashSet;
 
+/**
+ * A class that checks the given sudoku board and validates if it is solvable or not.
+ */
+
 public class SudokuValidator {
 
     String[][] board;
@@ -17,11 +21,11 @@ public class SudokuValidator {
     public boolean isValid() {
         HashSet<String> seen = new HashSet();
 
+        //checks every row and column in the sudoku table
         for(int row = 0; row <9; row++) {
-
             for(int column = 0; column <9; column++) {
-                
 
+                //the current value that we are comparing with the board
                 String currentValue = board [row][column];
                 char charValue = currentValue.charAt(0);
                 if (charValue != '.') {

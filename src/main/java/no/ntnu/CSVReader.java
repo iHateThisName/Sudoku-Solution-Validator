@@ -8,9 +8,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
+/**
+ * A class that makes it available for the application to read CSV files.
+ */
+
 public class CSVReader {
 
-    //Creating a filter so the user have the option to select a csv file
+
+    /**
+     * Creating a filter so the user has the option to select a csv file
+     */
     FileFilter filter = new FileNameExtensionFilter("CSV file", "csv");
     //Retrieve information on current directory
     File workingDir = new File(System.getProperty("user.dir"));
@@ -34,6 +41,11 @@ public class CSVReader {
         }
 
     }
+
+    /**
+     * Retrieves the CSVFile chosen.
+     * @return null if user cancelled or no CSV file was chosen.
+     */
     private File retrieveCSVFile() {
 
         //Creating a file chooser
@@ -59,6 +71,12 @@ public class CSVReader {
         }
         return null;
     }
+
+    /**
+     * Reads the CSV file chosen.
+     * @param csv
+     * @return sudoku
+     */
 
     private String[][] readFile(File csv) {
 
@@ -90,6 +108,10 @@ public class CSVReader {
         return sudoku;
     }
 
+    /**
+     * Get method for the sudoku.
+     * @return sudoku
+     */
     public String[][] getSudoku() {
         return sudoku;
     }
